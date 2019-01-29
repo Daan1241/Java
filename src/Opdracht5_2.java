@@ -11,9 +11,9 @@ public class Opdracht5_2 extends Applet {
 
     public void init(){
         setBackground(Color.darkGray);
-        gewicht_Valerie = 40*2;
-        gewicht_Jeroen = 100*2;
-        gewicht_Hans = 80*2;
+        gewicht_Valerie = 40;
+        gewicht_Jeroen = 100;
+        gewicht_Hans = 80;
 
 
     }
@@ -40,17 +40,17 @@ public class Opdracht5_2 extends Applet {
 
         g.setColor(Color.magenta);
         //Valerie: 40 kg
-        g.fillRect(30, 140, 45, gewicht_Valerie);
+        g.fillRect(30, 220-gewicht_Valerie*2,45, gewicht_Valerie*2);
         g.drawString("Valerie", 35, 240);
 
         g.setColor(Color.green);
         //Jeroen: 100 kg
-        g.fillRect(85, 20, 45, gewicht_Jeroen);
+        g.fillRect(85, 220-gewicht_Jeroen*2, 45, gewicht_Jeroen*2);
         g.drawString("Jeroen", 90, 240);
 
         g.setColor(Color.blue);
         //Hans: 80 kg
-        g.fillRect(140, 60, 45, gewicht_Hans);
+        g.fillRect(140, 220-gewicht_Hans*2, 45, gewicht_Hans*2);
         g.drawString("Hans", 145, 240);
 
 
