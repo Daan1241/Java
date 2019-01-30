@@ -34,12 +34,12 @@ public class Opdracht6_1 extends Applet {
         g.fillRoundRect(15, 15, 250, 100, 30, 30);
         //Hoeveelheden opschrijven
         g.setColor(Color.blue);
-        g.drawString("Jan betaalt: €" + a + ",-", 20, 40);
+        g.drawString("Jan krijgt: €" + a + ",-", 20, 40);
         g.setColor(Color.orange);
-        g.drawString("Ali betaalt: €" + b + ",-", 20, 60);
+        g.drawString("Ali krijgt: €" + b + ",-", 20, 60);
         g.setColor(Color.red);
-        g.drawString("Jeanette betaalt: €" + c + ",-", 20, 80);
+        g.drawString("Jeanette krijgt: €" + c + ",-", 20, 80);
         g.setColor(Color.black);
-        g.drawString("Daan betaalt: €" + d + ",-", 20, 100);
+        g.drawString("Daan krijgt: €" + d + ",-", 20, 100);
     }
 }
