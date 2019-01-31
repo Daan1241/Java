@@ -5,48 +5,61 @@ import java.awt.event.*;
 
 public class Opdracht8_1 extends Applet {
 
-    String schermtekst;
-    Button enter;
+    Button knop;
     Button reset;
-    TextField tekstvak;
+    String schermtekst;
+    TextField tekstinput;
+    Label label;
 
     public void init() {
-        schermtekst = "Tekst hier!";
-        enter = new Button("Tekst op knop");
-        tekstvak = new TextField("Klik op mij", 20);
+        schermtekst = "";
 
-        enterButtonListener enterbl = new enterButtonListener();
-        resetButtonListener resetbl = new resetButtonListener();
+        //knop
+        KnopListener kl = new KnopListener();
+        knop = new Button("Kopieer Tekst");
+        knop.addActionListener(kl); //moet NA 'knop = new Button("Knop Tekst");' komen!
 
-        enter.addActionListener(enterbl);
-        reset.addActionListener(resetbl);
+        //reset
+        ResetListener kl2 = new ResetListener();
+        reset = new Button("reset");
+        reset.addActionListener(kl2); //moet NA 'knop = new Button("Knop Tekst");' komen!
 
-        add(tekstvak);
-        add(enter);
+
+        //tekstvak
+        tekstinput = new TextField("Vul hier wat in", 20);
+
+
+        //label
+        label = new Label(schermtekst);
+
+        //in elkaar zetten van scherm
+        add(tekstinput);
+        add(knop);
         add(reset);
+        add(label);
+
+
 
     }
 
     public void paint(Graphics g) {
         g.drawString(schermtekst, 50, 60);
-
     }
 
-
-    class enterButtonListener implements ActionListener {
+    class KnopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            schermtekst = "TEST1";
+            schermtekst = tekstinput.getText();
             repaint();
         }
-
     }
 
-    class resetButtonListener implements ActionListener {
+    class ResetListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            schermtekst = "TEST2";
+            schermtekst = "";
             repaint();
         }
-
     }
+
 
 }
+
