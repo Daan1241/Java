@@ -12,7 +12,7 @@ public class Opdracht8_1 extends Applet {
     Label label;
 
     public void init() {
-        schermtekst = "";
+        schermtekst = "Vul wat in";
 
         //knop
         KnopListener kl = new KnopListener();
@@ -42,21 +42,20 @@ public class Opdracht8_1 extends Applet {
 
     }
 
-    public void paint(Graphics g) {
-        g.drawString(schermtekst, 50, 60);
-    }
 
+    //KOPIEREN
     class KnopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            schermtekst = tekstinput.getText();
+            label.setText(tekstinput.getText());
             repaint();
         }
     }
 
+
+    //RESET
     class ResetListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            schermtekst = "";
-            repaint();
+            label.setText("");
         }
     }
 
