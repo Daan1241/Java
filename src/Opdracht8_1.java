@@ -55,7 +55,9 @@ public class Opdracht8_1 extends Applet {
     //RESET
     class ResetListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+
             label.setText("");
+            tekstinput.setText("");
         }
     }
 
