@@ -19,6 +19,10 @@ public class Opdracht11_3 extends Applet {
             teller = teller+teller;
             y = y+20;
 
+
+
+
+
             int opgeteld = nummer1 + nummer2;
             nummer1 = nummer2;
             nummer2 = opgeteld;

@@ -1,65 +1,45 @@
 package Hoofdstuk_12;
+
 import java.awt.*;
 import java.applet.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.*;
+import java.awt.event.*;
+import java.util.Arrays;
 
-public class Opdracht12_3 extends Applet{
+public class Opdracht12_3 extends Applet {
 
-    int n1, n2, n3, n4;
-    String a,b,c,d;
-    TextField text1 = new TextField("Nummer 1");
-    TextField text2 = new TextField("Nummer 2");
-    TextField text3 = new TextField("Nummer 3");
-    TextField text4 = new TextField("Nummer 4");
-    Button verify = new Button("Check");
-    String[] getallen;
-    String output;
-    int i;
+    TextField[] textfields = new TextField[6];
+    Button OkBtn;
+    int[] intArray = new int[6];
 
     public void init() {
-        ButtonListener bl = new ButtonListener();
-        verify.addActionListener(bl);
+        OkBtn = new Button();
+        OkBtn.setLabel("Ok");
+
+        for (int i = 1; i <= 5; i++) {
+            textfields[i] = new TextField("tf", 2);
+            add(textfields[i]);
+        }
+        add(OkBtn);
 
 
-        add(text1);
-        add(text2);
-        add(text3);
-        add(text4);
-        add(verify);
-
+        KnopListener kl = new KnopListener();
+        OkBtn.addActionListener(kl);
 
 
     }
 
-    public void paint(Graphics g){
-        g.drawString(output, 50, 200);
-
-    }
-
-    class ButtonListener implements ActionListener {
+    class KnopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String a = text1.getText();
-            double d1 = Integer.parseInt(a);
-            String b = text2.getText();
-            double d2 = Integer.parseInt(b);
-            String c = text3.getText();
-            double d3 = Integer.parseInt(c);
-            String d = text4.getText();
-            double d4 = Integer.parseInt(d);
-            Arrays.sort(getallen);
-            getallen[0] = ""+n1;
-            getallen[1] = ""+n2;
-            getallen[2] = ""+n3;
-            getallen[3] = ""+n4;
+            for (int l = 1; l <= 5; l++) {
+                intArray[l] = Integer.parseInt(textfields[l].getText());
 
-
-            for (int i = 0; i < getallen.length; i++) {
-                output = output+getallen[i];
             }
-            repaint();
+            Arrays.sort(intArray);
+            for (int m = 1; m <= 5; m++) {
+                textfields[m].setText(intArray[m] + "");
+            }
         }
     }
+
 
 }
